@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Responsif</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4f8;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .header {
+        background-color: #2d3748;
+        color: white;
+        padding: 15px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #2d3748;
+        padding: 10px 20px;
+        color: white;
+      }
+
+      .nav-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .profile img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+        margin: 20px auto;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .form-container form {
+        width: 80%;
+      }
+
+      .form-container input,
+      .form-container button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .form-container button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+      }
+
+      .form-container button:hover {
+        background-color: #2980b9;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        display: none;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li {
+        display: inline;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #2d3748;
+        color: white;
+        margin-top: auto;
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          width: 100%;
+          background: #2980b9;
+          text-align: center;
+          padding: 10px 0;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="nav-title">Data Diri</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <div class="profile">
+      <img src="./poto.jpg" alt="Profile Picture" />
+      <h2>Muhammad Farel Sakha Atashah</h2>
+      <p>Saya mahasiswa prodi Teknologi Survei dan Pemetaan Dasar angkatan 2023 yang sekarang survive di semester 4</p>
+      <p>Ini adalah tugas mata kuliah Sistem Informasi Geografis Web</p>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <img src="kebun2.jpg" />
+      </div>
+      <div class="card">
+        <img src="jogja.jpg" />
+      </div>
+    </div>
+
+    <div class="form-container">
+      <form action="index.html" method="GET">
+        <label for="fname">Nama</label>
+        <input type="text" id="fname" name="fname" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; Copyright by Muhammad Farel Sakha Atashah</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
